@@ -5,8 +5,6 @@ import MapIcon from '@mui/icons-material/Public';
 import AlertsIcon from '@mui/icons-material/Warning';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { useState } from 'react';
-import Maps from "./components/maps";
-
 
 export default function Home() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
@@ -86,7 +84,7 @@ function Dashboard() {
 
 function CountryMap() {
   return <div>
-    <Maps />
+    Maps
   </div>;
 }
 
