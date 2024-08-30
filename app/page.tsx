@@ -6,7 +6,7 @@ import AlertsIcon from '@mui/icons-material/Warning';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { useState } from 'react';
 import Maps from "./components/maps";
-import { useRouter as router} from "next/navigation";
+
 
 export default function Home() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
@@ -61,7 +61,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white">
               <h1 className="text-5xl font-bold mb-2">GLOF-EWS</h1>
               <p className="text-xl">Glacial Lake Outburst Flood Early Warning System</p>
-              <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition" onClick={() => router.push("/")}>
+              <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition">
                 Explore the Dashboard
               </button>
             </div>
