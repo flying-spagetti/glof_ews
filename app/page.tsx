@@ -76,10 +76,10 @@ export default function Home() {
           <div className="bg-gray-800 rounded-xl shadow-2xl p-12 mb-24">
             <h3 className="text-3xl font-bold mb-6">Innovating for a Safer Tomorrow</h3>
             <p className="text-xl text-gray-300 mb-8">
-              GLOF-EWS is a cutting-edge project developed as part of SIH 2024 by Team 02. Our mission is to leverage advanced technology to protect communities from the devastating impacts of glacial lake outburst floods and other related calamities.
+              GLOF-EWS is a cutting-edge project developed as part of SIH 2024 by Team Exordianz23. Our mission is to leverage advanced technology to protect communities from the devastating impacts of glacial lake outburst floods and other related calamities.
             </p>
             <p className="text-lg text-gray-400">
-              Developed with passion and expertise by Gnaneswar Lopinti and the dedicated members of Team 02.
+              Developed with passion and expertise by Gnaneswar Lopinti and the dedicated members of Team Exordianz23.
             </p>
           </div>
         </div>

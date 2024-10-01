@@ -110,6 +110,17 @@ function MapPage() {
     [22.572, 88.363],  // Near Kolkata
   ];
 
+  // Precipitation data (example)
+  const precipitationData = [
+    { name: 'Haridwar', coords: [29.945, 78.163], precipitation: 120 },  // in mm
+    { name: 'Kanpur', coords: [26.449, 80.331], precipitation: 80 },
+    { name: 'Patna', coords: [25.594, 85.137], precipitation: 150 },
+    { name: 'Delhi', coords: [28.613, 77.209], precipitation: 60 },
+    { name: 'Agra', coords: [27.176, 78.009], precipitation: 90 },
+    { name: 'Guwahati', coords: [26.156, 91.769], precipitation: 200 },
+    { name: 'Bangladesh Border', coords: [25.594, 89.669], precipitation: 180 },
+  ];
+
   return (
     <MapContainer center={[22.5937, 78.9629]} zoom={5} scrollWheelZoom={true} style={{ height: '80vh', width: '100%' }}>
       <LayersControl position="topright">
@@ -168,6 +179,24 @@ function MapPage() {
           >
             <Popup>Ganga River</Popup>
           </Polyline>
+        </LayersControl.Overlay>
+
+        <LayersControl.Overlay checked name="Live Precipitation">
+          {precipitationData.map((location, index) => (
+            <Circle
+              key={index}
+              center={location.coords}
+              color="blue"
+              fillColor="blue"
+              fillOpacity={0.5}
+              radius={location.precipitation * 1000}  // Scale the radius based on precipitation
+            >
+              <Popup>
+                <div style={{ fontWeight: 'bold' }}>{location.name}</div>
+                <p>Precipitation: {location.precipitation} mm</p>
+              </Popup>
+            </Circle>
+          ))}
         </LayersControl.Overlay>
       </LayersControl>
     </MapContainer>

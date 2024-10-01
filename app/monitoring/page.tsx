@@ -18,6 +18,15 @@ import RadioFeeds from '../components/RadioFeeds';
 import MapPage from '../maps/page';
 import Link from 'next/link';
 
+// New imports for additional components
+import TotalCaseStatistics from '../components/TotalCaseStatistics';
+import LiveSNSFeed from '../components/LiveSNSFeed';
+import Heatmap from '../components/HeatMap';
+import CityEmergencyLevelMap from '../components/CityEmergencyLevelMap';
+import CrisisCategoriesRanking from '../components/CrisisCategoriesRanking';
+import RiskSentimentLevels from '../components/RiskSentimentLevels';
+import BarChart from '../components/BarChart';
+
 export default function Monitoring({ river }: { river?: string }) {
     const [activeMenu, setActiveMenu] = useState("dashboard");
 
@@ -28,7 +37,7 @@ export default function Monitoring({ river }: { river?: string }) {
                 <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
                 <div className="relative h-full flex flex-col justify-center items-center">
                     <h1 className="text-5xl sm:text-6xl font-bold text-white drop-shadow-lg mb-4">
-                        {river ? `${river} River Monitoring` : 'GLOF Monitoring Dashboard'}
+                        GLOF Monitoring Dashboard
                     </h1>
                     <p className="text-xl mt-2 text-indigo-300 max-w-2xl text-center">
                         {river ? `Real-time monitoring and analysis for ${river} River` : 'Real-time monitoring and analysis for effective Disaster Management'}
@@ -65,6 +74,55 @@ export default function Monitoring({ river }: { river?: string }) {
                         />
                     ) : (
                         <>
+                            <Section
+                                title="Total Case Statistics"
+                                icon={<FaChartLine size={28} className="text-green-400" />}
+                                imageUrl="/images/statistics-bg.jpg"
+                                content={<TotalCaseStatistics />}
+                            />
+
+                            <Section
+                                title="Live SNS Feed"
+                                icon={<FaBroadcastTower size={28} className="text-pink-400" />}
+                                imageUrl="/images/social-media-bg.jpg"
+                                content={<LiveSNSFeed />}
+                            />
+
+                            <Section
+                                title="Heatmap"
+                                icon={<FaExclamationCircle size={28} className="text-red-400" />}
+                                imageUrl="/images/heatmap-bg.jpg"
+                                content={<Heatmap />}
+                            />
+
+                            <Section
+                                title="City Emergency Level Map"
+                                icon={<FaExclamationCircle size={28} className="text-orange-400" />}
+                                imageUrl="/images/city-map-bg.jpg"
+                                content={<CityEmergencyLevelMap />}
+                            />
+
+                            <Section
+                                title="Crisis Categories Ranking"
+                                icon={<FaChartLine size={28} className="text-yellow-400" />}
+                                imageUrl="/images/ranking-bg.jpg"
+                                content={<CrisisCategoriesRanking />}
+                            />
+
+                            <Section
+                                title="Risk and Sentiment Levels"
+                                icon={<FaChartLine size={28} className="text-purple-400" />}
+                                imageUrl="/images/sentiment-bg.jpg"
+                                content={<RiskSentimentLevels />}
+                            />
+
+                            <Section
+                                title="Disaster Impact Analysis"
+                                icon={<FaChartLine size={28} className="text-blue-400" />}
+                                imageUrl="/images/bar-chart-bg.jpg"
+                                content={<BarChart />}
+                            />
+
                             <Section
                                 title="River Monitoring"
                                 icon={<FaWater size={28} className="text-blue-400" />}
