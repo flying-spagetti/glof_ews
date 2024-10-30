@@ -20,6 +20,7 @@
     "chartjs-gauge": "^0.3.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "cobe": "^0.6.3",
     "framer-motion": "^11.3.31",
     "glass-js": "^1.3.5",
     "google-map-react": "^2.2.1",

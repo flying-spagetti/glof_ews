@@ -26,6 +26,7 @@ import CityEmergencyLevelMap from '../components/CityEmergencyLevelMap';
 import CrisisCategoriesRanking from '../components/CrisisCategoriesRanking';
 import RiskSentimentLevels from '../components/RiskSentimentLevels';
 import BarChart from '../components/BarChart';
+import Globe from '../components/globe'
 
 export default function Monitoring({ river }: { river?: string }) {
     const [activeMenu, setActiveMenu] = useState("dashboard");
@@ -74,12 +75,20 @@ export default function Monitoring({ river }: { river?: string }) {
                         />
                     ) : (
                         <>
-                            <Section
-                                title="Total Case Statistics"
-                                icon={<FaChartLine size={28} className="text-green-400" />}
-                                imageUrl="/images/statistics-bg.jpg"
-                                content={<TotalCaseStatistics />}
-                            />
+                            <div className="flex justify-between items-center">
+                                <Section
+                                    title="Total Case Statistics"
+                                    icon={<FaChartLine size={28} className="text-green-400" />}
+                                    imageUrl="/images/statistics-bg.jpg"
+                                    content={<TotalCaseStatistics />}
+                                />
+                                <div className="w-1/3 flex items-center justify-center overflow-hidden">
+                                     {/* Set a fixed height for the globe */}
+                                     <div className='relative w-auto'>
+                                        <Globe className="absolute inset-0 w-full h-full" /> {/* Ensure the globe fills the container */}
+                                        </div>
+                                </div>
+                            </div>
 
                             <Section
                                 title="Live SNS Feed"
