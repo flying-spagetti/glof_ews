@@ -158,12 +158,12 @@ export default function Monitoring({ river }: { river?: string }) {
                                 }
                             />
 
-                            <Section
-                                title="Dam Monitoring"
-                                icon={<GiDam size={28} className="text-yellow-400" />}
-                                imageUrl="/images/dam-bg.jpg"
-                                content={<DamConditions />}
-                            />
+                                 <Section
+                                  title="Dam Monitoring"
+                                  icon={<GiDam size={28} className="text-yellow-400" />}
+                                  imageUrl="/images/dam-bg.jpg"
+                                  content={<DamConditions />}
+                                />
 
                             <Section
                                 title="Weather Monitoring"
