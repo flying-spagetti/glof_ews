@@ -37,6 +37,7 @@
     "react-leaflet": "^4.2.1",
     "react-rain-animation": "^1.0.4",
     "react-spinners": "^0.14.1",
+    "recharts": "^2.15.2",
     "sass": "^1.78.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
