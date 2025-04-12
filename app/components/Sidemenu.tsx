@@ -53,7 +53,7 @@ export default function Sidemenu() {
                 </ul>
             </nav>
             <div className="mb-6 px-6 py-4 text-gray-400 text-sm">
-                © SIH 2024 Team 02
+                © 90mlIodine 
             </div>
         </aside>
     );
