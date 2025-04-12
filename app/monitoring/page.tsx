@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { FaBroadcastTower, FaWater, FaMountain, FaCloudRain, FaExclamationCircle, FaCloudSunRain, FaChartLine, FaExternalLinkAlt } from 'react-icons/fa';
 import { GiDam } from 'react-icons/gi';
 import RiverDetails from '../components/RiverDetails';
-
+import RiverMap from '../components/river map'
 import Section from '../components/Section';
 import LakeTable from '../components/LakeTable';
 import RainfallChart from '../components/Prev_rainfall';
@@ -16,6 +16,7 @@ import WeatherPredictions from '../components/WeatherPrediction';
 import SocialMediaFeeds from '../components/SocialMediaFeeds';
 import RadioFeeds from '../components/RadioFeeds';
 import MapPage from '../maps/page';
+import IndiaFloodMap from '../components/IndiaFloodMap'
 import Link from 'next/link';
 
 // New imports for additional components
@@ -158,12 +159,12 @@ export default function Monitoring({ river }: { river?: string }) {
                                 }
                             />
 
-                            <Section
-                                title="Dam Monitoring"
-                                icon={<GiDam size={28} className="text-yellow-400" />}
-                                imageUrl="/images/dam-bg.jpg"
-                                content={<DamConditions />}
-                            />
+                                 <Section
+                                  title="Dam Monitoring"
+                                  icon={<GiDam size={28} className="text-yellow-400" />}
+                                  imageUrl="/images/dam-bg.jpg"
+                                  content={<DamConditions />}
+                                />
 
                             <Section
                                 title="Weather Monitoring"
@@ -178,7 +179,7 @@ export default function Monitoring({ river }: { river?: string }) {
                                 imageUrl="/images/map-bg.jpg"
                                 content={
                                     <div className="relative">
-                                        <MapPage />
+                                        <IndiaFloodMap />
                                         <Link href="/map" className="absolute top-2 right-2 text-white hover:text-blue-300 transition-colors">
                                             <FaExternalLinkAlt size={20} />
                                         </Link>
@@ -207,7 +208,7 @@ export default function Monitoring({ river }: { river?: string }) {
                         Interactive Risk Map
                     </h2>
                     <div className="h-96">
-                        <MapPage />
+                        <RiverMap />
                     </div>
                 </section>
             </div>

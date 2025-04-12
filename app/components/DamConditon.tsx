@@ -1,63 +1,36 @@
-import { FaExclamationTriangle, FaWater, FaCheckCircle, FaArrowUp, FaArrowDown } from 'react-icons/fa';
+"use client";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-function DamConditionUpdates() {
-    const data = [
-        { dam: "Tehri Dam", waterLevel: "150m", inflow: "2000 m³/s", outflow: "1800 m³/s", condition: "Stable", safetyAlert: "None" },
-        { dam: "Bhakra Dam", waterLevel: "120m", inflow: "2200 m³/s", outflow: "2500 m³/s", condition: "Overflow Risk", safetyAlert: "High" },
-        { dam: "Sardar Sarovar", waterLevel: "140m", inflow: "2300 m³/s", outflow: "2100 m³/s", condition: "Crack Detected", safetyAlert: "Critical" },
-    ];
+const data = [
+  { name: 'Tehri', total: 260, current: 180, inflow: 6.2, outflow: 3.4 },
+  { name: 'Sardar Sarovar', total: 946, current: 800, inflow: 10.5, outflow: 7.8 },
+  { name: 'Bhakra', total: 931, current: 750, inflow: 12.0, outflow: 9.2 },
+  { name: 'Indira Sagar', total: 975, current: 860, inflow: 11.0, outflow: 6.0 },
+  { name: 'Hirakud', total: 813, current: 600, inflow: 7.8, outflow: 5.1 },
+  { name: 'Nagarjuna Sagar', total: 408, current: 320, inflow: 5.2, outflow: 4.0 },
+  { name: 'Idukki', total: 199, current: 150, inflow: 3.4, outflow: 2.8 },
+  { name: 'Tungabhadra', total: 101, current: 75, inflow: 2.3, outflow: 1.7 },
+  { name: 'Mettur', total: 93.5, current: 70, inflow: 1.9, outflow: 1.4 },
+  { name: 'KRS', total: 49.5, current: 40, inflow: 1.6, outflow: 1.1 },
+];
 
-    const conditionIcons = {
-        "Stable": <FaCheckCircle title="Stable" className="text-green-500" />,
-        "Overflow Risk": <FaExclamationTriangle title="Overflow Risk" className="text-yellow-500" />,
-        "Crack Detected": <FaExclamationTriangle title="Crack Detected" className="text-red-500" />
-    };
-
-    const safetyAlertColors = {
-        "None": "text-green-400",
-        "High": "text-yellow-500",
-        "Critical": "text-red-500"
-    };
-
-    return (
-        <div className="w-full mx-auto">
-            <table className="bg-zinc-900 rounded-lg shadow-md w-full border border-zinc-700">
-                <thead>
-                    <tr>
-                        <th colSpan="6" className="py-4 px-4 border-b border-zinc-700 text-left text-lg text-red-500">
-                            Dam Condition Updates
-                        </th>
-                    </tr>
-                    <tr>
-                        <th className="py-2 px-4 border-b border-zinc-700 text-left">Dam</th>
-                        <th className="py-2 px-4 border-b border-zinc-700 text-left">Water Level</th>
-                        <th className="py-2 px-4 border-b border-zinc-700 text-left">Inflow</th>
-                        <th className="py-2 px-4 border-b border-zinc-700 text-left">Outflow</th>
-                        <th className="py-2 px-4 border-b border-zinc-700 text-left">Condition</th>
-                        <th className="py-2 px-4 border-b border-zinc-700 text-left">Safety Alert</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map((row, index) => (
-                        <tr key={index} className="hover:bg-zinc-800">
-                            <td className="py-2 px-4 border-b border-zinc-700">{row.dam}</td>
-                            <td className="py-2 px-4 border-b border-zinc-700">{row.waterLevel}</td>
-                            <td className="py-2 px-4 border-b border-zinc-700">
-                                <FaArrowUp className="mr-1 text-blue-400" /> {row.inflow}
-                            </td>
-                            <td className="py-2 px-4 border-b border-zinc-700">
-                                <FaArrowDown className="mr-1 text-blue-400" /> {row.outflow}
-                            </td>
-                            <td className="py-2 px-4 border-b border-zinc-700">{conditionIcons[row.condition]}</td>
-                            <td className={`py-2 px-4 border-b border-zinc-700 ${safetyAlertColors[row.safetyAlert]}`}>
-                                {row.safetyAlert}
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    );
+export default function DamStorageChart() {
+  return (
+    <div className="bg-white p-6 rounded-xl shadow-md w-full">
+      <h2 className="text-2xl font-semibold text-center mb-6">Dam Storage Dashboard</h2>
+      <ResponsiveContainer width="100%" height={450}>
+        <BarChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="total" fill="#8884d8" name="Total Capacity" />
+          <Bar dataKey="current" fill="#82ca9d" name="Current Storage" />
+          <Bar dataKey="inflow" fill="#3b82f6" name="Inflow" />
+          <Bar dataKey="outflow" fill="#ef4444" name="Outflow" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
 }
-
-export default DamConditionUpdates;
