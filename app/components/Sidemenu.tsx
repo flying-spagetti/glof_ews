@@ -25,7 +25,7 @@ export default function Sidemenu() {
         { name: "About", icon: DashboardIcon, link: "/" },
         { name: "Country Map", icon: MapIcon, link: "http://glofs.geoecology.uni-potsdam.de/" },
         { name: "Monitoring", icon: MonitoringIcon, link: "/monitoring" },
-        { name: "Alerts", icon: AlertsIcon, link: "/alerts" },
+        { name: "Alerts", icon: AlertsIcon, link: "/risk-assessment" },
         { name: "Settings", icon: SettingsIcon, link: "/settings" },
     ];
 
