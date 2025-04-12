@@ -76,7 +76,7 @@ export default function Monitoring({ river }: { river?: string }) {
                         />
                     ) : (
                         <>
-                            <div className="flex justify-between items-center">
+                                                        <div className="flex flex-col w-full gap-6">
                                 <Section
                                     title="Total Case Statistics"
                                     icon={<FaChartLine size={28} className="text-green-400" />}
