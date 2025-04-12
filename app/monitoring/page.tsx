@@ -28,7 +28,7 @@ import CrisisCategoriesRanking from '../components/CrisisCategoriesRanking';
 import RiskSentimentLevels from '../components/RiskSentimentLevels';
 import BarChart from '../components/BarChart';
 import Globe from '../components/globe'
-
+import WeatherCardMain from '../components/WeatherCardMain'
 export default function Monitoring({ river }: { river?: string }) {
     const [activeMenu, setActiveMenu] = useState("dashboard");
 
@@ -110,6 +110,12 @@ export default function Monitoring({ river }: { river?: string }) {
                                 icon={<FaExclamationCircle size={28} className="text-orange-400" />}
                                 imageUrl="/images/city-map-bg.jpg"
                                 content={<CityEmergencyLevelMap />}
+                            />
+                            <Section
+                                title="City Weather Report"
+                                icon={<FaExclamationCircle size={28} className="text-orange-400" />}
+                                imageUrl="/images/city-map-bg.jpg"
+                                content={<WeatherCardMain />}
                             />
 
                             <Section
